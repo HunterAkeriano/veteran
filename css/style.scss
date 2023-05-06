@@ -87,7 +87,16 @@ video {
     object-fit: cover;
     z-index: -1;
   }
-
+  .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // clip-path: circle(50% at center);
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+  }
 // ========================= main blocks =======================
 .header{
    
@@ -187,6 +196,7 @@ video {
         overflow: hidden;
         h1{
             text-align: center;
+            color: rgb(29, 162, 250)
         }
         .swiper-container{
             margin-top: 50px;
@@ -239,6 +249,7 @@ video {
         overflow: hidden;
         h2{
             text-align: center;
+              color: rgb(29, 162, 250)
         }
         .swiper-container{
             margin-top: 50px;
@@ -283,6 +294,28 @@ video {
             }
             .swiper-button-next::after{
                 font-size: 20px;
+            }
+        }
+    }
+    .help{
+        margin-top: 50px;
+        .title{
+            text-align: center;
+            color: rgb(29, 162, 250);
+            font-size: 40px;
+        }
+        .link{
+            .block{
+              margin-top: 20px;
+                h4{
+                    color: blue;
+                    font-weight: 800;
+                    font-size: 30px;
+                }
+                a{
+                    margin-top: 10px;
+                    color: yellow
+                }
             }
         }
     }
