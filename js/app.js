@@ -34,7 +34,6 @@ let swiper = new Swiper(".swiper1",{
     spaceBetween: 10,
  
     centerSlides: 'true',
-    fade: 'true',
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
