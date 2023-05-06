@@ -1,0 +1,165 @@
+// =================обнуление=============
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+
+
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p{
+    margin: 0;
+}
+.container{
+    max-width: 1440px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+body{
+    background-color: rgba(219, 229, 239, 1);
+    font-family: 'PT Sans', sans-serif;
+    overflow-y: overlay;
+    overflow-x: hidden;
+    width: 100%;
+}
+// ========================= main blocks =======================
+.header{
+    padding: 10px 0px;
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &-menu{
+            cursor: pointer;
+            span{
+                display: block;
+                width: 35px;
+                background-color: rgb(128, 125, 125);
+                border-radius: 20px;
+                height: 3px;
+                margin: 7px 0px;
+                transition: all .3s;
+            }
+        }
+        &-menu.active{
+            span:nth-child(1){
+                transform: translateY(12px) rotate(45deg);
+            }
+            span:nth-child(2){
+                opacity: 0;
+            }
+            span:nth-child(3){
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+        &-logo{
+            a{
+                img{
+                    width: 120px;
+                    height: 90px;
+                }
+            }
+        }
+    }
+}
+
+// бургер меню
+.menu-info{
+    position: absolute;
+    left: -100%;
+    top: 103px;
+    // background-color: rgba(219, 229, 239, 1);
+    background-color: black;
+    z-index: 10;
+    transition: all .3s;
+    width: 30%;
+    height: 100vh;
+    padding: 10px 0px;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+    a{
+        color: blue;
+        font-weight: 700;
+        margin: 10px 0px;
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+.menu-info.active{
+    left: 0;
+   
+}
+@media(max-width: 1000px){
+    .menu-info{
+        width: 50%;
+    }
+    .menu-info.active{
+        left: 0;
+        overflow: scroll;
+    } 
+}
+@media(max-width: 550px){
+    .menu-info{
+        width: 100%;
+        text-align: center;
+        padding: 15px 0px;
+    }
+  
+}
