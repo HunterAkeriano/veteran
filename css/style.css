@@ -69,6 +69,19 @@ body {
   overflow-y: overlay;
   overflow-x: hidden;
   width: 100%;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
 }
 
 .header {
@@ -197,5 +210,54 @@ body {
   font-size: 20px;
 }
 .main .student .swiper-container .swiper-button-next::after {
+  font-size: 20px;
+}
+.main .stock {
+  margin-top: 50px;
+  overflow: hidden;
+}
+.main .stock h2 {
+  text-align: center;
+}
+.main .stock .swiper-container {
+  margin-top: 50px;
+  position: relative;
+}
+.main .stock .swiper-container .swiper-wrapper {
+  margin: 20px 0px;
+}
+.main .stock .swiper-container .swiper-wrapper .swiper-slide {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgb(137, 137, 229);
+  padding: 30px 0px;
+  border-radius: 40px;
+  transition: all 0.3s;
+}
+.main .stock .swiper-container .swiper-wrapper .swiper-slide img {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 40px;
+}
+.main .stock .swiper-container .swiper-wrapper .swiper-slide:hover {
+  transform: translateY(-20px);
+}
+.main .stock .swiper-container .swiper-button-prev,
+.main .stock .swiper-container .swiper-button-next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+.main .stock .swiper-container .swiper-button-prev::after {
+  font-size: 20px;
+}
+.main .stock .swiper-container .swiper-button-next::after {
   font-size: 20px;
 }/*# sourceMappingURL=style.css.map */
