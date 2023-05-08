@@ -104,4 +104,9 @@ let swiper = new Swiper(".swiper1",{
  
   
  
-  PDFObject.embed("js/info.pdf", "#pdf-container", { pdfOpenParams: { navpanes: 0 } });
+  PDFObject.embed("js/info.pdf", "#pdf-container", { 
+    pdfOpenParams: { 
+      navpanes: 0,
+      toolbar: 0
+    } 
+  });
