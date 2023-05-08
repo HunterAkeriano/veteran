@@ -101,47 +101,7 @@ let swiper = new Swiper(".swiper1",{
     }
   });  
 
-  const loadPdf = async () => {
-    const pdfUrl = 'js/info.pdf';
-    const loadingTask = pdfjsLib.getDocument(pdfUrl);
-    const pdf = await loadingTask.promise;
-    const pagesCount = pdf.numPages;
-
-    const container = document.getElementById('pdf-container');
-
-    for (let pageNum = 1; pageNum <= pagesCount; ++pageNum) {
-      const page = await pdf.getPage(pageNum);
-      const viewport = page.getViewport({scale: 1});
-      const canvas = document.createElement('canvas');
-      const context = canvas.getContext('2d');
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
-      const renderTask = page.render({canvasContext: context, viewport: viewport}).promise;
-      await renderTask;
-      container.appendChild(canvas);
-    }
-
-    const settingsPanel = document.createElement('div');
-    settingsPanel.id = 'pdf-settings';
-    const zoomInButton = document.createElement('button');
-    zoomInButton.innerText = '+';
-    zoomInButton.addEventListener('click', () => {
-      container.style.zoom = parseFloat(container.style.zoom || 1) + 0.1;
-    });
-    const zoomOutButton = document.createElement('button');
-    zoomOutButton.innerText = '-';
-    zoomOutButton.addEventListener('click', () => {
-      container.style.zoom = parseFloat(container.style.zoom || 1) - 0.1;
-    });
-    const printButton = document.createElement('button');
-    printButton.innerText = 'Print';
-    printButton.addEventListener('click', () => {
-      window.print();
-    });
-    settingsPanel.appendChild(zoomInButton);
-    settingsPanel.appendChild(zoomOutButton);
-    settingsPanel.appendChild(printButton);
-    // container.appendChild(settingsPanel);
-  };
-  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
-  document.addEventListener('DOMContentLoaded', loadPdf);
+ 
+  
+ 
+  PDFObject.embed("js/info.pdf", "#pdf-container", { pdfOpenParams: { navpanes: 0 } });
