@@ -102,7 +102,7 @@ let swiper = new Swiper(".swiper1",{
   });  
 
   const loadPdf = async () => {
-    const pdfUrl = '/js/info.pdf';
+    const pdfUrl = 'js/info.pdf';
     const loadingTask = pdfjsLib.getDocument(pdfUrl);
     const pdf = await loadingTask.promise;
     const pagesCount = pdf.numPages;
